@@ -36,6 +36,27 @@
             </div> <!-- End of row -->
         </div> <!-- ENd of container fluid -->
     </div> <!-- End of content -->
+    <script>let timer;
+
+// Set up an event listener for when the user switches tabs
+document.addEventListener('visibilitychange', function() {
+  // If the user switches to another tab, clear the timer and dismiss the test
+  if (document.visibilityState === 'hidden') {
+    clearTimeout(timer);
+    dismissTest();
+  }
+});
+
+// Start a timer for the test
+function startTimer() {
+  timer = setTimeout(dismissTest, 10000); // 10 seconds
+}
+
+// Dismiss the test
+function dismissTest() {
+  // Add code to dismiss the test here
+}
+</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
     <script src="app.js"></script>
